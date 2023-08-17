@@ -1,0 +1,10 @@
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espacio vertical entre las filas */
+  }
+  
+  .custom-table td, .custom-table th {
+    padding: 10px; /* Espacio en las celdas */
+    border-bottom: 1px solid #ddd; /* Borde inferior para separar filas */
+  }
+  

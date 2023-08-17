@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Bienvenido</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="exit"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!--Aqui es el body-->
+<ion-content [fullscreen]="true">
+    <div id="container">
+      <ion-card (click)="irANotasEscolares()">
+        <ion-card-header>
+          <ion-card-title>Notas Escolares</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Aquí estarán tus notas escolares. Haz clic para ver más detalles.
+        </ion-card-content>
+      </ion-card>
+ 
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Malla Curricular</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Aquí se mostrará la malla curricular.
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Escanear Código QR</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Escanea un código QR aquí.
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-button (click)="mostrarAlerta()">Mostrar Alerta</ion-button>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Pie de Página</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notas Escolares</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Mis Notas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Asignatura</th>
+              <th>Profesor</th>
+              <th>Nota</th> <!-- Agregamos una columna para las notas -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Matemáticas</td>
+              <td>Juan Pérez</td>
+              <td>8.5</td>
+            </tr>
+            <tr>
+              <td>Historia</td>
+              <td>Maria González</td>
+              <td>7.2</td>
+            </tr>
+            <tr>
+              <td>Programacion de aplicaciones moviles</td>
+              <td>Lapas</td>
+              <td>6.5</td>
+            </tr>
+            <!-- Agrega más filas con datos de ejemplo -->
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
