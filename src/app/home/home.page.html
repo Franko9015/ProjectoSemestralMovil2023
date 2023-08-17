@@ -7,35 +7,63 @@
     </ion-buttons>
     <ion-title>Bienvenido</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="cerrarSesion()">
         <ion-icon slot="icon-only" name="exit"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<!--Aqui es el body-->
 <ion-content [fullscreen]="true">
-    <div id="container">
-      <ion-card (click)="irANotasEscolares()">
-        <ion-card-header>
-          <ion-card-title>Notas Escolares</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Aquí estarán tus notas escolares. Haz clic para ver más detalles.
-        </ion-card-content>
-      </ion-card>
- 
-    
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Malla Curricular</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Aquí se mostrará la malla curricular.
-      </ion-card-content>
-    </ion-card>
-    
+  <div id="container">
+    <ion-row>
+      <ion-col size="6" (click)="irANotasEscolares()">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Notas</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Aquí estarán tus notas escolares.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6" (click)="irAMallaCurricular()">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Cursos</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Historial de cursos
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Solicitudes</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Realiza tus solicitudes en línea.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Horario </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Consulta tu horario de clases.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
     <ion-card>
       <ion-card-header>
         <ion-card-title>Escanear Código QR</ion-card-title>
@@ -44,14 +72,7 @@
         Escanea un código QR aquí.
       </ion-card-content>
     </ion-card>
-    
-    <ion-button (click)="mostrarAlerta()">Mostrar Alerta</ion-button>
+
+    <ion-button ion-tab-button (click)="mostrarAlerta()">Mostrar Alerta</ion-button>
   </div>
-
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Pie de Página</ion-title>
-  </ion-toolbar>
-</ion-footer>
