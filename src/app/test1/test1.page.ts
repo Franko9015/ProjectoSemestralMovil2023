@@ -18,8 +18,8 @@ interface Asignatura {
 export class TEST1Page {
 
   asignaturas: Asignatura[] = [
-    { nombre: 'Matemáticas', profesor: 'Juan Pérez', parcial1: 8.5, parcial2: 7.0, parcial3: 9.0, examen: 8.8 },
-    { nombre: 'Historia', profesor: 'Maria González', parcial1: 7.2, parcial2: 6.8, parcial3: 7.5, examen: 7.0 },
+    { nombre: 'Matemáticas', profesor: 'Juan Pérez', parcial1: 4.5, parcial2: 5.0, parcial3: 7.0, examen: 5.0 },
+    { nombre: 'Historia', profesor: 'Maria González', parcial1: 7.0, parcial2: 6.5, parcial3: 6.0, examen: 6.5 },
     // Agrega más asignaturas con sus notas
   ];
 

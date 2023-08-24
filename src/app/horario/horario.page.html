@@ -8,23 +8,62 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Horario Semanal</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item-divider>
-            <ion-label>Lunes</ion-label>
-          </ion-item-divider>
-          <ion-item>
-            <ion-label>Materia 1</ion-label>
-            <ion-label>8:00 AM - 10:00 AM</ion-label>
-          </ion-item>
-          <!-- Repite para los demás días y materias -->
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Lunes</ion-card-subtitle>
+            <ion-card-title>08:00 AM - 10:00 AM</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Matemáticas
+            <br>
+            Profesor: Juan Pérez
+            <br>
+            Aula: A-101
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Martes</ion-card-subtitle>
+            <ion-card-title>09:00 AM - 11:00 AM</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Historia
+            <br>
+            Profesor: María Rodríguez
+            <br>
+            Aula: B-202
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Miércoles</ion-card-subtitle>
+            <ion-card-title>10:30 AM - 12:30 PM</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Ciencias Naturales
+            <br>
+            Profesor: Carlos Gómez
+            <br>
+            Aula: C-303
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Repite para los demás días y horas -->
+
+  </ion-grid>
 </ion-content>

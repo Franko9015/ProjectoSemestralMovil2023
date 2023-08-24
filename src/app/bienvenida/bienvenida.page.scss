@@ -1,27 +1,25 @@
 ion-content {
-  
-  
   .login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 20px;
+    padding: 16px;
   }
   
   .input-label {
     color: var(--ion-color-primary);
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 17px;
   }
   
   .input-field {
-    border: 2px solid var(--ion-color-primary);
-    border-radius: 12px;
+    border: 3px solid var(--ion-color-primary);
+    border-radius: 14px;
     padding: 15px;
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 15px;
   }
   
@@ -30,5 +28,29 @@ ion-content {
     --color: #ffffff;
     font-weight: bold;
     font-size: 18px;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .forgot-password a {
+    color: var(--ion-color-primary);
+    text-decoration: underline;
+  }
+
+  // Estilos específicos para iOS
+  ion-header.platform-ios ion-title {
+    font-size: 18px;
+  }
+
+  ion-item.platform-ios ion-label.input-label {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  ion-item.platform-ios ion-input.input-field {
+    font-size: 2px;
   }
 }

@@ -20,59 +20,57 @@
       <ion-col size="6" (click)="irANotasEscolares()">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Notas</ion-card-title>
+            <ion-card-title>
+              <ion-icon name="clipboard"></ion-icon>
+              Notas
+            </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            Aquí estarán tus notas escolares.
-          </ion-card-content>
         </ion-card>
       </ion-col>
 
       <ion-col size="6" (click)="irAMallaCurricular()">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Cursos</ion-card-title>
+            <ion-card-title>
+              <ion-icon name="book"></ion-icon>
+              Historial de Cursos
+            </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            Historial de cursos
-          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="6" (click)="iracomunicados()">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Solicitudes</ion-card-title>
+            <ion-card-title>
+              <ion-icon name="megaphone"></ion-icon>
+              Comunicados
+            </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            Realiza tus solicitudes en línea.
-          </ion-card-content>
         </ion-card>
       </ion-col>
 
-      <ion-col size="6">
+      <ion-col size="6" (click)="irAhorariodeclase()">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Horario </ion-card-title>
+            <ion-card-title>
+              <ion-icon name="calendar"></ion-icon>
+              Horario
+            </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            Consulta tu horario de clases.
-          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
 
-    <ion-card>
+    <ion-card (click)="abrirCamaraSimulada()">
       <ion-card-header>
-        <ion-card-title>Escanear Código QR</ion-card-title>
+        <ion-card-title>
+          <ion-icon name="qr-code"></ion-icon>
+          Escanear Código QR
+        </ion-card-title>
       </ion-card-header>
-      <ion-card-content>
-        Escanea un código QR aquí.
-      </ion-card-content>
     </ion-card>
-
-    <ion-button ion-tab-button (click)="mostrarAlerta()">Mostrar Alerta</ion-button>
   </div>
 </ion-content>

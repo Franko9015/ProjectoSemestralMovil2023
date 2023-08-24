@@ -16,15 +16,6 @@ export class HomePage {
     private animationCtrl: AnimationController
   ) {}
 
-  async mostrarAlerta() {
-    const alert = await this.alertController.create({
-      header: 'Alerta de Prueba',
-      message: 'Esta es una alerta de prueba para demostrar que funciona.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
 
   async cerrarSesion() {
     if (this.logoutButton) {
@@ -52,7 +43,6 @@ export class HomePage {
       });
       animation.play();
     });
-  
   }
 
   irANotasEscolares() {
@@ -63,4 +53,27 @@ export class HomePage {
     this.navCtrl.navigateForward('/malla-curricular');
   }
 
+  irAhorariodeclase(){
+   this.navCtrl.navigateForward('/horario');
+  }
+
+  iracomunicados(){
+    this.navCtrl.navigateForward('/comunicados');
+  }
+
+  abrirCamaraSimulada() {
+    this.simularAperturaCamara();
+  }
+
+  private async simularAperturaCamara() {
+    const cameraResult = 'Simulación: Se abrió la cámara. Resultado simulado: Código QR escaneado';
+    
+    const alert = await this.alertController.create({
+      header: 'Simulación de Apertura de Cámara',
+      message: cameraResult,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }

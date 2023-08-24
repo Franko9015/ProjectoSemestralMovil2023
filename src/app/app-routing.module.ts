@@ -24,12 +24,12 @@ const routes: Routes = [
     loadChildren: () => import('./bienvenida/bienvenida.module').then(m => m.BienvenidaPageModule)
   },
   {
-    path: 'solicitudes-en-linea',
-    loadChildren: () => import('./solicitudes-en-linea/solicitudes-en-linea.module').then(m => m.SolicitudesEnLineaPageModule)
-  },
-  {
     path: 'horario',
     loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
+  },
+  {
+    path: 'comunicados',
+    loadChildren: () => import('./comunicados/comunicados.module').then( m => m.ComunicadosPageModule)
   },
 ];
 
