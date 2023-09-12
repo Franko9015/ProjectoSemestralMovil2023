@@ -19,7 +19,23 @@
             <ion-label>
               <h2>{{ asignatura.nombre }}</h2>
               <p>Profesor: {{ asignatura.profesor }}</p>
-              <p>Nota Final: {{ calcularNotaFinal(asignatura) }}</p>
+              <div class="notas">
+                <table class="custom-table">
+                  <tr>
+                    <th>Parcial 1</th>
+                    <th>Parcial 2</th>
+                    <th>Parcial 3</th>
+                    <th>Examen</th>
+                  </tr>
+                  <tr>
+                    <td [style.color]="getColor(asignatura.parcial1)">{{ asignatura.parcial1 }}</td>
+                    <td [style.color]="getColor(asignatura.parcial2)">{{ asignatura.parcial2 }}</td>
+                    <td [style.color]="getColor(asignatura.parcial3)">{{ asignatura.parcial3 }}</td>
+                    <td [style.color]="getColor(asignatura.examen)">{{ asignatura.examen }}</td>
+                  </tr>
+                </table>
+              </div>
+              <p class="nota-final" [style.color]="getColor(calcularNotaFinal(asignatura))">Nota Final: {{ calcularNotaFinal(asignatura) }}</p>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -27,4 +43,3 @@
     </ion-card>
   </div>
 </ion-content>
-

@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'home/:username',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
-    redirectTo: 'bienvenida',
+    redirectTo: 'startpage',
     pathMatch: 'full'
   },
   {
@@ -31,6 +31,24 @@ const routes: Routes = [
     path: 'comunicados',
     loadChildren: () => import('./comunicados/comunicados.module').then( m => m.ComunicadosPageModule)
   },
+  {
+    path: 'startpage',
+    loadChildren: () => import('./startpage/startpage.module').then( m => m.StartpagePageModule)
+  },
+  {
+    path: 'cargandopage/:username',
+    loadChildren: () => import('./cargandopage/cargandopage.module').then( m => m.CargandopagePageModule)
+  },
+  {
+    path: 'perfil/:username',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'olvidastecontrasenia',
+    loadChildren: () => import('./olvidastecontrasenia/olvidastecontrasenia.module').then( m => m.OlvidastecontraseniaPageModule)
+  },
+
+
 ];
 
 @NgModule({

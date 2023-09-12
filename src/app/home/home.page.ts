@@ -1,6 +1,7 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, AlertController, AnimationController } from '@ionic/angular';
-import { Animation } from '@ionic/angular';
+import { Component, Renderer2, ElementRef, ViewChild } from '@angular/core';
+import { NavController, AlertController, AnimationController, Animation } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,21 @@ import { Animation } from '@ionic/angular';
 })
 export class HomePage {
   @ViewChild('logoutButton', { static: true }) logoutButton!: ElementRef;
+  username: string = '';
 
   constructor(
     public alertController: AlertController,
     private navCtrl: NavController,
-    private animationCtrl: AnimationController
+    private animationCtrl: AnimationController,
+    private route: ActivatedRoute
+    
+
   ) {}
 
+  ngOnInit() {
 
+    this.username = this.route.snapshot.paramMap.get('username') ?? '';
+  }
   async cerrarSesion() {
     if (this.logoutButton) {
       const logoutAnimation = this.animationCtrl.create()
@@ -35,6 +43,7 @@ export class HomePage {
       this.navCtrl.navigateRoot('/bienvenida');
     }, 1000); // Esperar 1 segundo antes de redirigir
   }
+  
   
   async playAnimation(animation: Animation) {
     return new Promise<void>((resolve) => {
@@ -76,4 +85,5 @@ export class HomePage {
 
     await alert.present();
   }
+  
 }

@@ -12,7 +12,10 @@
     <ion-item *ngFor="let asignatura of asignaturas">
       <ion-label>
         {{ asignatura.nombre }}
-        <div class="estado" [class.aprobado]="asignatura.aprobado">{{ asignatura.aprobado ? 'Aprobado' : 'Reprobado' }}</div>
+        <div class="estado" [class.aprobado]="asignatura.aprobado" [class.reprobado]="!asignatura.aprobado">{{ asignatura.aprobado ? 'Aprobado' : 'Reprobado' }}</div>
+        <div class="asistencia" [style.color]="getColor(asignatura.asistencia)">
+          {{ asignatura.asistencia }}%
+        </div> 
       </ion-label>
     </ion-item>
   </ion-list>

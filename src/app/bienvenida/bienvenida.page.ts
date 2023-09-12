@@ -26,7 +26,7 @@ export class BienvenidaPage {
 
       setTimeout(() => {
         loading.dismiss();
-        this.navCtrl.navigateRoot('/home');
+        this.navCtrl.navigateRoot(`/cargandopage/${this.username}`);
       }, 2000); // Simula un tiempo de carga antes de ir al home
     } else {
       const alert = await this.alertCtrl.create({
@@ -36,6 +36,7 @@ export class BienvenidaPage {
       });
       await alert.present();
     }
+
   }
 }
 
