@@ -1,6 +1,8 @@
 import { Component, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { NavController, AlertController, AnimationController, Animation } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+//////////////libreria
+import { ServJsonServerService } from '../services/serv-json-server.service';
 
 
 @Component({
@@ -16,7 +18,8 @@ export class HomePage {
     public alertController: AlertController,
     private navCtrl: NavController,
     private animationCtrl: AnimationController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private servJS : ServJsonServerService
     
 
   ) {}
@@ -24,6 +27,12 @@ export class HomePage {
   ngOnInit() {
 
     this.username = this.route.snapshot.paramMap.get('username') ?? '';
+  }
+
+  listar(){
+    this.servJS.listar().subscribe((resp) =>{
+      console.log(resp);
+    })
   }
   async cerrarSesion() {
     if (this.logoutButton) {
