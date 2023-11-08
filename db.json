@@ -1,11 +1,9 @@
-
 {
-    "alumnos":[
+  "alumnos": [
     {
-        "id" : 1,
-        "nombre" : "juanito",
-        "curso"  : "2 basico"
-
+      "id": 1,
+      "nombre": "juanito",
+      "curso": "2 basico"
     }
-]
+  ]
 }

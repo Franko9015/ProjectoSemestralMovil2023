@@ -13,16 +13,16 @@
         <ion-card class="comunicados-card">
           <ion-card-header>
             <ion-card-title class="comunicados-title">
-              <ion-icon name="megaphone" class="comunicados-icon"></ion-icon>
+              <ion-icon [ngStyle]="{'color': segmento === 'U' ? '#ff0000' : '#007bff'}" [ngClass]="{'suspension-icon': segmento === 'U', 'ensayo-icon': segmento === 'G'}"></ion-icon>
               Comunicados
             </ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-segment>
-              <ion-segment-button value="urgente" class="urgente-segment">
+            <ion-segment [(ngModel)]="segmento" (ionChange)="cambiarSegmento()">
+              <ion-segment-button value="U" class="urgente-segment">
                 Urgente
               </ion-segment-button>
-              <ion-segment-button value="normal" class="normal-segment" checked>
+              <ion-segment-button value="G" class="general-segment" checked>
                 General
               </ion-segment-button>
             </ion-segment>
@@ -30,40 +30,22 @@
         </ion-card>
       </ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-card class="suspension-card">
+    
+    <ion-row *ngFor="let comunicado of comunicados">
+      <ion-col size="12" *ngIf="comunicado.tipo_comunicado === segmento">
+        <ion-card [ngClass]="{'suspension-card': segmento === 'U', 'ensayo-card': segmento === 'G'}">
           <ion-card-header>
-            <ion-card-title class="suspension-title">
-              <ion-icon name="alert-circle" class="suspension-icon"></ion-icon>
-              Suspensión de Clases - Urgente
+            <ion-card-title [ngClass]="{'suspension-title': segmento === 'U', 'ensayo-title': segmento === 'G'}">
+              <ion-icon [name]="segmento === 'U' ? 'alert-circle' : 'megaphone'" [ngClass]="{'suspension-icon': segmento === 'U', 'ensayo-icon': segmento === 'G'}"></ion-icon>
+              {{ comunicado.titulo }}
             </ion-card-title>
-            <ion-card-subtitle class="suspension-subtitle">Publicado el 18 de octubre, 21:00</ion-card-subtitle>
+            <ion-card-subtitle class="suspension-subtitle">{{ formatDate(comunicado.fecha_envio) }}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            Urgente: Debido a una situación de seguridad en el campus, todas las clases quedan suspendidas a partir de ahora.
-            Manténgase atentos a nuevas actualizaciones y siga las instrucciones de seguridad proporcionadas por las autoridades.
+            {{ comunicado.contenido }}
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-card class="ensayo-card">
-          <ion-card-header>
-            <ion-card-title class="ensayo-title">
-              <ion-icon name="megaphone" class="ensayo-icon"></ion-icon>
-              Ensayo General
-            </ion-card-title>
-            <ion-card-subtitle class="ensayo-subtitle">Publicado el 9 de agosto, 15:00</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Recordatorio: Mañana desde las 13:00 hasta las 16:00 hay ensayo general para los bailes de fiestas patrias.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </div>
-</ion-content>
+    
+    

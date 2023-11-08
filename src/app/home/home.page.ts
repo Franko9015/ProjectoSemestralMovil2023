@@ -1,8 +1,7 @@
 import { Component, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { NavController, AlertController, AnimationController, Animation } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-//////////////libreria
-import { ServJsonServerService } from '../services/serv-json-server.service';
+import { Alumno } from '../interface/alumno';
 
 
 @Component({
@@ -19,21 +18,12 @@ export class HomePage {
     private navCtrl: NavController,
     private animationCtrl: AnimationController,
     private route: ActivatedRoute,
-    private servJS : ServJsonServerService
     
 
   ) {}
 
-  ngOnInit() {
 
-    this.username = this.route.snapshot.paramMap.get('username') ?? '';
-  }
 
-  listar(){
-    this.servJS.listar().subscribe((resp) =>{
-      console.log(resp);
-    })
-  }
   async cerrarSesion() {
     if (this.logoutButton) {
       const logoutAnimation = this.animationCtrl.create()
@@ -69,6 +59,10 @@ export class HomePage {
 
   irAMallaCurricular() {
     this.navCtrl.navigateForward('/malla-curricular');
+  }
+
+  irAnotaciones() {
+    this.navCtrl.navigateForward('/anotaciones');
   }
 
   irAhorariodeclase(){

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ServicioAPIDjangoService } from '../services/servicio-apidjango.service';
+import { Materias } from '../interface/materias';
 
 @Component({
   selector: 'app-malla-curricular',
@@ -6,27 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./malla-curricular.page.scss'],
 })
 export class MallaCurricularPage {
-  asignaturas = [
-    { nombre: 'Matemáticas', aprobado: true, asistencia: 85 },
-    { nombre: 'Historia', aprobado: false, asistencia: 82 },
-    { nombre: 'Ciencias', aprobado: true, asistencia: 78 },
-    { nombre: 'Idiomas', aprobado: true, asistencia: 95 },
-    { nombre: 'Arte', aprobado: false, asistencia: 70 },
-    { nombre: 'Educación Física', aprobado: true, asistencia: 88 },
-    { nombre: 'Informática', aprobado: true, asistencia: 92 },
-    { nombre: 'Literatura', aprobado: false, asistencia: 69 },
-    { nombre: 'Geografía', aprobado: true, asistencia: 75 },
-    // Agrega más asignaturas aquí...
-  ];
+  asignaturas: Materias[] = [];
+
+  constructor(private servAPI: ServicioAPIDjangoService) { }
+
+  ngOnInit() {
+    this.listarMaterias();
+  }
 
   getColor(asistencia: number): string {
-    if (asistencia >= 85 && asistencia <= 100) {
+    if (asistencia >= 85) {
       return 'green';
-    } else if (asistencia >= 75 && asistencia < 85) {
+    } else if (asistencia >= 75) {
       return 'orange';
     } else {
       return 'red';
     }
   }
-}
 
+  listarMaterias() {
+    this.servAPI.listarMaterias().subscribe((data: Materias[]) => {
+      this.asignaturas = data;
+    });
+  }
+}
