@@ -46,7 +46,8 @@ const routes: Routes = [
   {
     path: 'olvidastecontrasenia',
     loadChildren: () => import('./olvidastecontrasenia/olvidastecontrasenia.module').then( m => m.OlvidastecontraseniaPageModule)
-  },  {
+  },
+  {
     path: 'anotaciones',
     loadChildren: () => import('./anotaciones/anotaciones.module').then( m => m.AnotacionesPageModule)
   },

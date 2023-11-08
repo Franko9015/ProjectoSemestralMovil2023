@@ -20,7 +20,9 @@ export class HomePage {
     private route: ActivatedRoute,
     
 
-  ) {}
+  ) {
+    this.username = this.route.snapshot.paramMap.get('username') ?? '';
+  }
 
 
 

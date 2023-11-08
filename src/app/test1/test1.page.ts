@@ -60,7 +60,7 @@ export class TEST1Page implements OnInit {
   listarProfesores() {
     this.servAPI.listarProfesor().subscribe((profesores) => {
       // Filtra la lista de profesores para mostrar solo el profesor con ID 1
-      this.profesores = profesores.filter((profesor) => profesor.id === 2);
+      this.profesores = profesores.filter((profesor) => profesor.id === 1);
     });
   }
 

@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/perfil', username]" >
+      <ion-button [routerLink]="['/perfil', username]">
         <ion-icon slot="icon-only"  name="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+    <ion-title>Bienvenido {{ username }}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="cerrarSesion()">
         <ion-icon slot="icon-only" name="exit"></ion-icon>
