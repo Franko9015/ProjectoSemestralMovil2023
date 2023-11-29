@@ -1,0 +1,74 @@
+ion-content {
+    --ion-background-color: #000000;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  ion-header {
+    background-color: #000000;
+    color: #000000;
+    --ion-background-color: #000000;
+  }
+  
+  ion-content {
+    --ion-background-color: #000000;
+  }
+  
+  ion-list {
+    margin-top: 200px;
+    --ion-background-color: #000000;
+    background-color: #000000;  /* Agregar fondo negro al ion-list */
+  }
+  
+  ion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+  .asistencia-presente {
+    color: #00ff00;  /* Cambia el color a verde cuando presente */
+  }
+  
+  .asistencia-ausente {
+    color: #ff0000;  /* Cambia el color a rojo cuando ausente */
+  }
+  
+  ion-label {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    --ion-background-color: #000000;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  p {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #bcbaba;  /* Corregir el valor de color */
+  }
+
+  .center-container {
+    text-align: center;
+  }
+  
+  .custom-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    font-size: 1.5em;
+    padding: 10px 20px;
+  }
+  
+  .custom-button:hover {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  

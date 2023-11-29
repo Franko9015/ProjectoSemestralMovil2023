@@ -12,7 +12,8 @@ ion-content {
 
 .custom-table th,
 .custom-table td {
-  padding: 5px;
+  padding: 3px; /* Ajusta el padding según sea necesario */
+  font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
   text-align: center;
   border: 1px solid #ddd;
   color: #ffffff; /* Color de texto para que sea visible en el fondo blanco */
@@ -23,6 +24,7 @@ ion-content {
   font-weight: bold;
   color: #333;
 }
+
 
 .notas {
   margin-top: 20px;

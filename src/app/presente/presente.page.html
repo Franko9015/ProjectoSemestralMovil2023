@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/luis"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de Alumnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let alumno of alumnos">
+      <ion-avatar slot="start">
+      </ion-avatar>
+      <ion-label>
+        <h2>Alumno:  {{alumno.usera}}</h2>
+        <p>Fecha de Nacimiento: {{ alumno.fecha_nacimiento | date }}</p>
+        <p>Curso: 1-A</p>
+        <p>Asistencias: {{ alumno.asistencias }}</p>
+        <p>Reprobado: {{ alumno.Reprobado ? 'Sí' : 'No' }}</p>
+        <p [ngClass]="{'asistencia-presente': alumno.asistencia === 'P', 'asistencia-ausente': alumno.asistencia === 'A'}">
+          Asistencia: {{ alumno.asistencia === 'P' ? 'Presente' : 'Ausente' }}
+        </p>       
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-content *ngFor="let alumno of alumnos">
+  <div class="center-container">
+    <ion-button color="dark" class="custom-button" (click)="marcarPresente(alumno.id)">Marcar Presente</ion-button>
+  </div>
+
+</ion-content>

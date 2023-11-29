@@ -79,13 +79,15 @@
       </ion-card>
     </ion-col>
 
-    <ion-card  (click)="abrirCamaraSimulada()">
-      <ion-card-header>
-        <ion-card-title>
-          <ion-icon name="qr-code"></ion-icon>
-          Escanear Código QR
-        </ion-card-title>
-      </ion-card-header>
-    </ion-card>
-  </div>
-</ion-content>
+      <ion-card (click)="scan()">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="qr-code"></ion-icon>
+            Escanear Código QR
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+
+    

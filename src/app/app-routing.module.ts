@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'anotaciones',
     loadChildren: () => import('./anotaciones/anotaciones.module').then( m => m.AnotacionesPageModule)
+  },  {
+    path: 'presente',
+    loadChildren: () => import('./presente/presente.module').then( m => m.PresentePageModule)
   },
+
 
 
 

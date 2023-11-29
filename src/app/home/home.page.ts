@@ -1,7 +1,12 @@
 import { Component, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { NavController, AlertController, AnimationController, Animation } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-import { Alumno } from '../interface/alumno';
+import {
+  Barcode,
+  BarcodeScanner,
+  BarcodeFormat,
+} from '@capacitor-mlkit/barcode-scanning';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -12,12 +17,14 @@ import { Alumno } from '../interface/alumno';
 export class HomePage {
   @ViewChild('logoutButton', { static: true }) logoutButton!: ElementRef;
   username: string = '';
+  public barcodes: Barcode[] = [];
 
   constructor(
     public alertController: AlertController,
     private navCtrl: NavController,
     private animationCtrl: AnimationController,
     private route: ActivatedRoute,
+    private toast: ToastController
     
 
   ) {
@@ -25,7 +32,26 @@ export class HomePage {
   }
 
 
-
+  public async scan(): Promise<void> {
+    try {
+      const { barcodes } = await BarcodeScanner.scan({
+        formats: [BarcodeFormat.QrCode],
+      });
+      this.barcodes = barcodes;
+    } catch (error) {
+      const toast = await this.toast.create({
+        message: '' + error,
+        duration: 5000,
+      });
+      toast.present();
+    } finally {
+      setTimeout(() => {
+        this.navCtrl.navigateForward('/presente');
+      }, 5000); 
+    }
+  }
+  
+ // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
   async cerrarSesion() {
     if (this.logoutButton) {
       const logoutAnimation = this.animationCtrl.create()
@@ -75,20 +101,5 @@ export class HomePage {
     this.navCtrl.navigateForward('/comunicados');
   }
 
-  abrirCamaraSimulada() {
-    this.simularAperturaCamara();
-  }
 
-  private async simularAperturaCamara() {
-    const cameraResult = 'Simulación: Se abrió la cámara. Resultado simulado: Código QR escaneado';
-    
-    const alert = await this.alertController.create({
-      header: 'Simulación de Apertura de Cámara',
-      message: cameraResult,
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
-  
 }

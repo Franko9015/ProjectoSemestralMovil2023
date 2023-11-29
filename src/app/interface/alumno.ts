@@ -1,13 +1,15 @@
 export interface Alumno {
     id: number;
     usera: {
-        id: number;
+      first_name: string;
+      last_name: string;
     };
-    fecha_nacimiento: string; 
-    foto_alumno: string; 
+    fecha_nacimiento: string;
+    foto_alumno: string;
     curso: {
-        id: number;
+      nombre: string;
     };
     asistencias: number;
     Reprobado: boolean;
-}
+    asistencia: string;
+  }
