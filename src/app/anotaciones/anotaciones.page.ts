@@ -10,7 +10,7 @@ import { ServicioAPIDjangoService } from '../services/servicio-apidjango.service
 export class AnotacionesPage implements OnInit {
   anotaciones: Anotaciones[] = [];
 
-  constructor(private servAPI: ServicioAPIDjangoService) {}
+  constructor(private servAPI: ServicioAPIDjangoService) { }
 
   ngOnInit() {
     this.listarAnotaciones();

@@ -25,8 +25,7 @@
     </ion-item>
   </ion-list>
   <ion-content *ngFor="let alumno of alumnos">
-  <div class="center-container">
-    <ion-button color="dark" class="custom-button" (click)="marcarPresente(alumno.id)">Marcar Presente</ion-button>
-  </div>
-
+    <div class="center-container">
+      <ion-button color="dark" class="custom-button" *ngFor="let alumno of alumnos" (click)="marcarPresente(alumno.id)">Marcar Presente</ion-button>
+    </div>
 </ion-content>
