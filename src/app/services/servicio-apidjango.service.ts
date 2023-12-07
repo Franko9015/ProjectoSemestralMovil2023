@@ -20,12 +20,12 @@ export class ServicioAPIDjangoService {
   private comunicadosUrl = 'https://lushoooc.pythonanywhere.com/api/comunicados/';
   private ProfesorUrl = 'https://lushoooc.pythonanywhere.com/api/profesor/';
   private MateriasUrl = 'https://lushoooc.pythonanywhere.com/api/materias/';
-  private AnotacionesUrl = 'http://lushoooc.pythonanywhere.com/api/anotaciones/';
-  private AlumnosUrl = 'http://lushoooc.pythonanywhere.com/api/alumnos/';
+  private AnotacionesUrl = 'https://lushoooc.pythonanywhere.com/api/anotaciones/';
+  private AlumnosUrl = 'https://lushoooc.pythonanywhere.com/api/alumnos/';
   private AlumnoDetailUrl = 'http://lushoooc.pythonanywhere.com/api/alumnos/';
 
 
-    // Obtener detalles de un alumno por ID
+    // Obtener detalles de un alumno sspor ID
     getAlumnoDetail(id: number): Observable<Alumno> {
       const url = `${this.AlumnoDetailUrl}${id}/`;
       return this.http.get<Alumno>(url);
