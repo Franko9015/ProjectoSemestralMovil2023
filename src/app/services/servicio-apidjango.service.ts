@@ -22,7 +22,7 @@ export class ServicioAPIDjangoService {
   private MateriasUrl = 'https://lushoooc.pythonanywhere.com/api/materias/';
   private AnotacionesUrl = 'https://lushoooc.pythonanywhere.com/api/anotaciones/';
   private AlumnosUrl = 'https://lushoooc.pythonanywhere.com/api/alumnos/';
-  private AlumnoDetailUrl = 'http://lushoooc.pythonanywhere.com/api/alumnos/';
+  private AlumnoDetailUrl = 'https://lushoooc.pythonanywhere.com/api/alumnos/';
 
 
     // Obtener detalles de un alumno sspor ID
